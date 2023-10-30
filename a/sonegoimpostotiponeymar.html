@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fvck receita federal</title>
+    
+</head>
+<body>
+    <h1> ATIVIDADE 2</h1>
+    <span id="nome"></span>
+    <span id="cpf"></span>
+    <span id="num_dep"></span>
+    <span id="renda_ano"></span>
+    <span id="desconto_dep"></span>
+    <span id="renda_poggers"></span>
+    <span id="aliq"></span>
+    <script>
+
+        let nome = prompt("digite o nome do contribuente");
+        let cpf = prompt("digite o cpf do contribuente");
+        let renda_ano = Number(prompt("digite a renda anual"));
+        let num_dep = Number(prompt("digite o numero de dependentes"));
+        let desconto_dep = num_dep * 110;
+        let renda_poggers = 0;
+        let aliq = "";
+        renda_poggers = renda_ano - desconto_dep;
+
+        switch (true) {
+            case renda_poggers < 501:
+                aliq = "isento";
+                break;
+                case renda_poggers < 5001:
+                aliq = "5%";
+                break;
+                case renda_poggers < 10001:
+                aliq = "10%";
+                break;
+                case renda_poggers > 10001:
+                aliq = "15%";
+                break;
+                aliq = "entrada invalida tente novamente"
+                default:
+        } 
+            document.getElementById("nome").innerHTML = "Nome do contribuente: " + nome + "<br>"
+            document.getElementById("cpf").innerHTML = "CPF do contribuente: " + cpf + "<br>"
+            document.getElementById("renda_ano").innerHTML = "Renda anual sem descontos: " + renda_ano + "<br>"
+            document.getElementById("num_dep").innerHTML = "Numero de dependentes: " + num_dep + "<br>"
+            document.getElementById("aliq").innerHTML = "Porcentagem da aliquota: " + aliq + "<br>"
+            document.getElementById("desconto_dep").innerHTML = "Desconto total por dependentes: " + desconto_dep + "<br>"
+            document.getElementById("renda_poggers").innerHTML = "Renda anual com descontos: " + renda_poggers + "<br>"
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <h1>Atividade 1</h1>
+    <span id="cadastro"></span>
+    <script>
+        let pergunta = prompt("Deseja registrar uma disciplina?");
+
+        while (pergunta.toLowerCase() === "sim") {
+            let nome = prompt("Digite o nome da disciplina");
+            let desc = prompt("Digite a descrição do conteúdo da disciplina");
+            let freq = prompt("Digite a frequência na matéria");
+            let nota_min = prompt("Digite a nota mínima para aprovação do aluno na matéria");
+            pergunta = prompt("Deseja registrar mais disciplinas?");
+
+            document.getElementById("cadastro").innerHTML += "<br> <hr> Nome da disciplina: " + nome + "<br> descrição da disciplina: " + desc + "<br> frequencia minima: " + freq + "<br> Nota minima pra ser aprovado: " + nota_min + "." ;
+        }
+            
+    </script>
+</body>
+</html>

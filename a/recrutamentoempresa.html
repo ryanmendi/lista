@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+<body>
+    <p>Média de idade dos candidados: <span id="media_idade"></span></p>
+    <p>Total de candidayos inscritos: <span id="qntd_cand"></span></p>
+    <p>Total de candidatos homens inscritos: <span id="male_cand"></span></p>
+    <p>Total de candidatas mulheres inscritas: <span id="female_cand"></span></p>
+    <p>Candidatos maiores de idade que tem expêriencia profissional: <span id="aprovados"></span></p>
+    <script>
+        let pergunta = prompt("Deseja cadastrar um candidato?")
+        let total_cand = 0;
+        let male_cand = 0;
+        let female_cand = 0;
+        let media_idade = 0;
+        let qntd_cand = 0;
+
+        while (pergunta.toLowerCase() == "sim") {
+        let num_cand = Number(prompt("Digite o numero do candidato"))
+        let yr_cand = Number(prompt("Digite a idade do candidato"))
+        let sexo_cand = prompt("Digite o sexo do candidato(masculino ou feminino)")
+        let exp_cand = prompt("O candidato tem expêriencia profissional?(sim ou não)");
+        switch (sexo_cand) {
+            case "masculino":
+                male_cand = male_cand + 1
+                media_idade = media_idade + yr_cand
+                qntd_cand = qntd_cand + 1
+                pergunta = prompt("Deseja cadastrar mais um candidato?")
+                break;
+            case "feminino":
+                female_cand = female_cand + 1
+                media_idade = media_idade + yr_cand
+                qntd_cand = qntd_cand + 1
+                pergunta = prompt("Deseja cadastrar mais um candidato?")
+            default:
+                break;
+        }
+        if (yr_cand > 17 && exp_cand == "sim") {
+            document.getElementById("aprovados").innerHTML  += num_cand + " " + " "
+        }
+        media_idade = media_idade/qntd_cand
+        }
+
+
+        document.getElementById("media_idade").innerHTML = media_idade.toFixed(2)
+        document.getElementById("qntd_cand").innerHTML = qntd_cand
+        document.getElementById("male_cand").innerHTML = male_cand
+        document.getElementById("female_cand").innerHTML = female_cand
+
+    </script>
+</body>
+</html>

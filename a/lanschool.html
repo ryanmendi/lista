@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>where the name?</title>
+</head>
+
+<body>
+    <div id="aluno"></div>
+    <p>Media da turma: <span id="media_turma"></span></p>
+    <p>Maior media: <span id="maiormedia"></span></p>
+    <p>Menor media: <span id="menormedia"></span></p>
+    <hr>
+    <p>Quantidade de alunos aprovados: <span id="alunoaprovado"></span></p>
+    <p>Quantidade de alunos reprovados por falta e nota: <span id="alunoreprovado"></span></p>
+    <script>
+
+        let nota = [];
+        let freq = 0;
+        let media = 0;
+        let stunaprov = 0;
+        var stunreprov = 0;
+        let sit = "";
+        let media_turma = 0;
+        let qntd = 0;
+        let maiormedia = -1;
+        let menormedia = 11;
+        let alunoaprovado = 0;
+        let alunoreprovado = 0;
+
+
+        for (let aluno = 1; aluno < 3; aluno++) {
+            let matricula = Number(prompt("Qual o numero da matricula?" + aluno));
+            let nota1 = Number(prompt("Digite a primeira nota"));
+            let nota2 = Number(prompt("Digite a segunda nota"));
+            let nota3 = Number(prompt("Digite a terceira nota"));
+            let frequencia = Number(prompt("Digite a quantidade de aulas frequentadas pelo aluno"))
+            let media_final = (nota1 + nota2 + nota3) / 3
+            media_turma = media_turma + media_final
+            qntd = qntd + 1
+            if (media_final > 6 && frequencia > 25.5) {
+                sit = "aprovado"
+            } else {
+                sit = "reprovado"
+            }
+            if (media_final > maiormedia) {
+                maiormedia = media_final
+            }
+            if (media_final < menormedia) {
+                menormedia = media_final
+            }
+            if (sit == "aprovado") {
+                alunoaprovado = alunoaprovado + 1
+            } else {
+                alunoreprovado = alunoreprovado + 1
+            }
+
+            document.getElementById("aluno").innerHTML += "Numero da matricula do aluno: " + matricula + "." + "<br>" + "<br>" + "Media final do aluno: " + media_final.toFixed(2) + "." + "<br>" + "<br>" + "O aluno foi aprovado ou reprovado: " + sit + "." + "<br>" + "<hr>" + "<br>"
+        }
+        media_turma = media_turma / qntd
+        document.getElementById("media_turma").innerHTML = media_turma.toFixed(2)
+        document.getElementById("maiormedia").innerHTML = maiormedia
+        document.getElementById("menormedia").innerHTML = menormedia
+
+        document.getElementById("alunoaprovado").innerHTML = alunoaprovado
+        document.getElementById("alunoreprovado").innerHTML = alunoreprovado
+
+
+
+    </script>
+</body>
+
+</html>

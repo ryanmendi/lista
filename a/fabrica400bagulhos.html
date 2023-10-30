@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+    <p>Peças reprovadas: <span id="reprovado"></span></p>
+    <p>Total de peças aprovadas: <span id="totalaprovado"></span></p>
+    <p>Total de peças reprovadas: <span id="totalreprovado"></span></p>
+    <script>
+        let qualidade = 0;
+        let totalaprovado = 0;
+        let totalreprovado = 0;
+        let reprovado = "";
+        let pecanumero = 0; 
+        
+        for (let peca = 0; peca < 5; peca++) {
+            pecanumero = prompt("Qual o numero da peça?")
+            qualidade = prompt("A qualidade do produto foi aprovada(0) ou reprovada(1)?")
+            if (qualidade == 1) {
+                totalreprovado = totalreprovado + 1
+                document.getElementById("reprovado").innerHTML += pecanumero + "      "
+            } else {
+                totalaprovado = totalaprovado + 1
+            }
+        }
+        document.getElementById("totalaprovado").innerHTML = totalaprovado
+        document.getElementById("totalreprovado").innerHTML = totalreprovado
+    </script>
+</body>
+</html>
